@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import {
   animate,
   motion,
@@ -11,7 +11,7 @@ type StickyCursorProps = {
   stickyElement: React.RefObject<HTMLElement | null>;
 };
 
-export default function StickyCursor({ stickyElement }: StickyCursorProps) {
+const StickyCursor = ({ stickyElement }: StickyCursorProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const cursor = useRef<HTMLDivElement | null>(null);
   const cursorSize = isHovered ? 60 : 15;
@@ -38,34 +38,40 @@ export default function StickyCursor({ stickyElement }: StickyCursorProps) {
     animate(cursor.current, { rotate: `${angle}rad` }, { duration: 0 });
   };
 
-  const manageMouseMove = (e: MouseEvent) => {
-    if (!stickyElement.current) return;
+  const manageMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!stickyElement.current) return;
 
-    const { clientX, clientY } = e;
-    const { left, top, height, width } =
-      stickyElement.current.getBoundingClientRect();
+      const { clientX, clientY } = e;
+      const { left, top, height, width } =
+        stickyElement.current.getBoundingClientRect();
 
-    const center = { x: left + width / 2, y: top + height / 2 };
+      const center = { x: left + width / 2, y: top + height / 2 };
 
-    if (isHovered) {
-      const distance = { x: clientX - center.x, y: clientY - center.y };
+      if (isHovered) {
+        const distance = { x: clientX - center.x, y: clientY - center.y };
 
-      rotate(distance);
+        rotate(distance);
 
-      const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
-      const newScaleX = transform(absDistance, [0, height / 2], [1, 1.3]);
-      const newScaleY = transform(absDistance, [0, width / 2], [1, 0.8]);
+        const absDistance = Math.max(
+          Math.abs(distance.x),
+          Math.abs(distance.y)
+        );
+        const newScaleX = transform(absDistance, [0, height / 2], [1, 1.3]);
+        const newScaleY = transform(absDistance, [0, width / 2], [1, 0.8]);
 
-      scale.x.set(newScaleX);
-      scale.y.set(newScaleY);
+        scale.x.set(newScaleX);
+        scale.y.set(newScaleY);
 
-      mouse.x.set(center.x - cursorSize / 2 + distance.x * 0.1);
-      mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
-    } else {
-      mouse.x.set(clientX - cursorSize / 2);
-      mouse.y.set(clientY - cursorSize / 2);
-    }
-  };
+        mouse.x.set(center.x - cursorSize / 2 + distance.x * 0.1);
+        mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
+      } else {
+        mouse.x.set(clientX - cursorSize / 2);
+        mouse.y.set(clientY - cursorSize / 2);
+      }
+    },
+    [isHovered, stickyElement]
+  );
 
   const manageMouseOver = () => {
     setIsHovered(true);
@@ -102,7 +108,7 @@ export default function StickyCursor({ stickyElement }: StickyCursorProps) {
       element.removeEventListener("mouseleave", manageMouseLeave);
       window.removeEventListener("mousemove", manageMouseMove);
     };
-  }, [isHovered, stickyElement]);
+  }, [manageMouseMove, stickyElement]);
 
   return (
     <div className="">
@@ -123,4 +129,6 @@ export default function StickyCursor({ stickyElement }: StickyCursorProps) {
       />
     </div>
   );
-}
+};
+
+export default StickyCursor;

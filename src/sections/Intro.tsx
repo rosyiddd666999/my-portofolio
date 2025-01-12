@@ -26,7 +26,7 @@ const Intro: FC = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          My name's Abdul Rosyid, a computer science student in Indonesia.
+          My name&apos;s Abdul Rosyid, a computer science student in Indonesia.
           Specializing in front-end & design UI/UX.
         </h2>
       </motion.div>
