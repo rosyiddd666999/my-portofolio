@@ -58,10 +58,7 @@ const Certificates: FC = () => {
         <div className="mt-20">
           <AnimatePresence mode="wait" initial={false}>
             {certificates.map(
-              (
-                { name, company, role, quote, image, imagePositionY, href },
-                index
-              ) =>
+              ({ name, company, role, quote, image, href }, index) =>
                 index === certificateIndex && (
                   <Link
                     href={href}
@@ -76,7 +73,6 @@ const Certificates: FC = () => {
                       role={role}
                       quote={quote}
                       image={image}
-                      imagePositionY={imagePositionY}
                       key={quote}
                     />
                   </Link>

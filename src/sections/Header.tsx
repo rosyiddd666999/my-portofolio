@@ -1,11 +1,11 @@
-import React, { forwardRef, MouseEvent } from "react";
+import React, { FC, forwardRef, MouseEvent } from "react";
 import Link from "next/link";
 import { motion, useAnimate } from "framer-motion";
 import MagneticFramer from "@/components/MagneticFramer";
 
 type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Header = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
+const Header: FC = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();

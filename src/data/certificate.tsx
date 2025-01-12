@@ -17,7 +17,6 @@ const certificates = [
     image: image1,
     subImage1: image1a,
     subImage2: null,
-    imagePositionY: 1,
     href: "/certificate/1",
   },
   {
@@ -30,7 +29,6 @@ const certificates = [
     image: image2,
     subImage1: image2a,
     subImage2: image2b,
-    imagePositionY: 1,
     href: "/certificate/2",
   },
   {
@@ -43,7 +41,6 @@ const certificates = [
     image: image3,
     subImage1: image3a,
     subImage2: null,
-    imagePositionY: 1,
     href: "/certificate/3",
   },
 ];

@@ -12,20 +12,10 @@ const Certificate = (
     role: string;
     image: string | StaticImport;
     company: string;
-    imagePositionY: number;
     className?: string;
   } & HTMLAttributes<HTMLDivElement>
 ) => {
-  const {
-    quote,
-    name,
-    role,
-    image,
-    company,
-    imagePositionY,
-    className,
-    ...rest
-  } = props;
+  const { quote, name, role, image, company, className, ...rest } = props;
 
   const {
     scope: quoteScope,

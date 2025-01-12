@@ -32,7 +32,6 @@ const navItems = [
 const Footer: FC = () => {
   const { scope, entranceAnimation } = useTextRevealAnimation();
   const inView = useInView(scope);
-  const { x, y } = useMousePosition();
 
   useEffect(() => {
     if (inView) {

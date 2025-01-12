@@ -1,6 +1,7 @@
 "use client";
 
 import projects from "@/data/projects";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
 export default function ProjectDetail() {
@@ -46,18 +47,18 @@ export default function ProjectDetail() {
         </h1>
         <div className="grid lg:grid-cols-4 gap-4">
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <img
+            <Image
               src={project.imageDetail1.src}
               alt={project.name}
               className="object-cover w-full h-full"
             />
-            <img
+            <Image
               src={project.imageDetail2.src}
               alt={project.name}
               className="object-cover w-full h-full"
             />
           </div>
-          <img
+          <Image
             src={project.imageDetail3.src}
             alt={project.name}
             className="lg:col-span-2 object-cover w-full h-full"

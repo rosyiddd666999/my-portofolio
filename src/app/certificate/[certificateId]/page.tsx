@@ -2,6 +2,7 @@
 
 import { useRouter, useParams } from "next/navigation";
 import certificates from "@/data/certificate";
+import Image from "next/image";
 
 const CertificateDetail = () => {
   const router = useRouter();
@@ -46,18 +47,18 @@ const CertificateDetail = () => {
           Certificate Detail
         </h1>
         <div className="text-left">
-          <img
+          <Image
             src={certificate.image.src}
             alt={certificate.name}
             className="justify-center w-full"
           />
-          <img
+          <Image
             src={certificate.subImage1.src}
             alt={certificate.name}
             className="justify-center mt-4 w-full"
           />
           {certificate.subImage2 && (
-            <img
+            <Image
               src={certificate.subImage2.src}
               alt={certificate.name}
               className="justify-center mt-4 w-full"
