@@ -59,14 +59,14 @@ const Header = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
   return (
     <header>
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-20"
         ref={navScope}
       >
-        <nav className="mt-20 flex flex-col z-10">
+        <nav className="mt-20 flex flex-col z-20">
           {[
             { label: "About", href: "#intro" },
             { label: "Selected Works", href: "#projects" },
-            { label: "Certificate", href: "#testimonials" },
+            { label: "Certificate", href: "#certificates" },
             { label: "FAQs", href: "#faqs" },
             { label: "Contact", href: "#contact" },
           ].map(({ label, href }) => (
