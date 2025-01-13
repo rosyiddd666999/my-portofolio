@@ -74,38 +74,48 @@ const Footer: FC = () => {
                 transition={{ duration: 0.5, delay: 1.75 }}
               >
                 <div className="flex flex-col gap-4">
-                  <Button
-                    variant="secondary"
-                    className="mt-8 w-min"
-                    iconAfter={
-                      <div className="w-12 h-6 flex transition duration-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="#FFFFFF"
-                          className="size-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                          />
-                        </svg>
-                      </div>
-                    }
+                  <a href="mailto:abdulrosyid696969@gmail.com">
+                    <Button
+                      variant="secondary"
+                      className="mt-8 w-min"
+                      iconAfter={
+                        <div className="w-12 h-6 flex transition duration-500">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="#FFFFFF"
+                            className="size-6"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                            />
+                          </svg>
+                        </div>
+                      }
+                    >
+                      <span className="lowercase text-white">
+                        abdulrosyid696969@gmail.com
+                      </span>
+                    </Button>
+                  </a>
+                  <a href="https://instagram.com/a.rosyiddd_">
+                    <Button variant="text" className="w-min lowercase">
+                      a.rosyiddd_
+                    </Button>
+                  </a>
+                  <a
+                    href="https://wa.me/6282245603502"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <span className="lowercase text-white">
-                      abdulrosyid696969@gmail.com
-                    </span>
-                  </Button>
-                  <Button variant="text" className="w-min lowercase">
-                    a.rosyiddd_
-                  </Button>
-                  <Button variant="text" className="w-min">
-                    +6282245603502
-                  </Button>
+                    <Button variant="text" className="w-min">
+                      +6282245603502
+                    </Button>
+                  </a>
                 </div>
               </motion.div>
             </div>
