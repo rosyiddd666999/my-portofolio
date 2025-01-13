@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, MouseEvent } from "react";
+import React, { forwardRef, MouseEvent } from "react";
 import Link from "next/link";
 import { motion, useAnimate } from "framer-motion";
 import MagneticFramer from "@/components/MagneticFramer";
