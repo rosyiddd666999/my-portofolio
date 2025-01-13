@@ -158,4 +158,6 @@ const Header: FC = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
   );
 });
 
+Header.displayName = "Header";
+
 export default Header;

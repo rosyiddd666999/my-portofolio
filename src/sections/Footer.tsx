@@ -4,7 +4,6 @@ import { FC, useEffect, MouseEvent } from "react";
 import Button from "@/components/Button";
 import useTextRevealAnimation from "@/components/useTextRevealAnimation";
 import { motion, useInView } from "framer-motion";
-import useMousePosition from "@/components/useMousePosition";
 
 const navItems = [
   {
