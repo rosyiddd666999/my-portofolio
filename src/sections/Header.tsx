@@ -5,7 +5,7 @@ import MagneticFramer from "@/components/MagneticFramer";
 
 type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Header: FC = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
+const Header = forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [topLineScope, topLineAnimate] = useAnimate();
   const [bottomLineScope, bottomLineAnimate] = useAnimate();
